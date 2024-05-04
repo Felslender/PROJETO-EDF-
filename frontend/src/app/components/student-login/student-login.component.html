@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<div class="container">
+    <div class="left">
+        <div class="form-container">
+            <form [formGroup]="formulary">
+                <div class="">
+                    <div class="container-box box-large">
+                        <div class="logo-container">
+                            <a routerLink="/home">
+                                <img class="img-logo" src="../../../assets/images/logo edf.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="label1">
+                            <p class="subtitle">Seja bem-vindo(a)<br />Insira seus dados para entrar</p>
+                        </div>
+                        <div class="inputs">
+
+                            <div class="inputbox input-container"
+                                [ngClass]="{ 'error-field': formulary.get('email')?.hasError('emptyRequiredField') }">
+                                <div class="icon2"><img src="../../../assets/register/email.svg" alt=""></div>
+                                <input placeholder="Email" type="text" id="Email" formControlName="email">
+                            </div>
+                            <div class="error-message-container">
+                                <div class="error-message-4" *ngIf="formulary.get('email')?.hasError('email')">E-mail
+                                    inválido</div>
+                            </div>
+                            <div class="inputbox-password input-container"
+                                [ngClass]="{ 'error-field': formulary.get('senha')?.hasError('emptyRequiredField') }">
+                                <div class="icon"><img src="../../../assets/register/password.svg" alt=""></div>
+                                <input placeholder="Senha" type="{{ showPassword ? 'text' : 'password' }}" id="Senha"
+                                    formControlName="senha">
+
+                                <div class="" id="btn-senha" (click)="togglePasswordVisibility()">
+                                    <i class="fas" [class.fa-eye]="!showPassword"
+                                        [class.fa-eye-slash]="showPassword"></i>
+                                </div>
+                            </div>
+                            <div class="error-message-container" *ngIf="showLoginError">
+                                <div class="error-message-4">Email/Senha Invalido</div>
+                            </div>
+                        </div>
+                        <button (click)="login()">Entrar</button>
+                    </div>
+                    <p class="no-account"> Você não tem conta? <a href="/register">Cadastrar-se</a></p>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+    <div class="right">
+        <div class="background-container">
+            <div class="img-background">
+                <img class="img-login" src="../../../assets/images/img-login1.svg" alt="">
+            </div>
+        </div>
+    </div>
+</div>

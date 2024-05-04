@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="left-container" *ngIf="navbarService.showContainer">
+    <div class="profile-container-info">
+      <div class="left-container-header">
+        <h2>Perfil de Usuário</h2>
+      </div>
+      <div class="left-container-info">
+        <div class="field">
+          <div class="field-item">
+            <div class="field-header">
+              <p>Nome Completo:</p>
+            </div>
+            <div class="field-content">
+              <p id="nome"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="field-item">
+            <div class="field-header">
+              <p>Email:</p>
+            </div>
+            <div class="field-content">
+              <p id="email"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="field-item">
+            <div class="field-header">
+              <p>CPF:</p>
+            </div>
+            <div class="field-content">
+              <p id="cpf"></p>
+            </div>
+          </div>
+          <div class="field-item">
+            <div class="field-header">
+              <p>Telefone:</p>
+            </div>
+            <div class="field-content">
+              <p id="telefone"></p>
+            </div>
+          </div>
+          <div class="field-item">
+            <div class="field-header">
+              <p>Gênero:</p>
+            </div>
+            <div class="field-content">
+              <p id="genero"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          
+          <div class="field-item">
+            <div class="field-header">
+              <p>Estado Civil:</p>
+            </div>
+            <div class="field-content">
+              <p id="estadoCivil"></p>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="field">
+          <div class="field-item">
+            <div class="field-header">
+              <p>Data de Nascimento</p>
+            </div>
+            <div class="field-content">
+              <p id="nasc"></p>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+  <app-kids class="right-container" *ngIf="showRightContainer"></app-kids>
+</div>

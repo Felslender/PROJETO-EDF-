@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="sub-container">
+    <mat-card *ngFor="let visita of visits" class="card">
+      <mat-card-header>
+        <mat-card-title>{{ visita.Modalidade_da_visita }}</mat-card-title>
+        <mat-card-subtitle>{{ visita.Dia_da_visita | date:'dd/MM/yyyy' }} {{ visita.Horario_da_visita }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="status">
+          <span>
+            {{ visita.Modalidade_da_visita === 'Sala no Meet' ? 'Online' : visita.Modalidade_da_visita === 'Presencial' ? 'Presencial' : 'Semi-Presencial' }}
+          </span>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button style="color: #1472FF;" mat-button>ADICIONAR AO CALENDÁRIO</button>
+        <button style="color: #1472FF;" mat-button>MATERIAIS COMPLEMENTARES</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="menubar">
+	<div class="left-items">
+		<img #menuIcon (click)="toggleSidebar()" class="ham-icon icon" src="../../../assets/register/User/menu-lateral.svg">
+		<img (click)="navBarRedirect('home')" class="logo-icon icon" src="../../../assets/navbar/logo.svg">
+	</div>
+
+	<div class="center-items">
+		<ul>
+			<li><a style="cursor: pointer;" (click)="navBarRedirect('classes')">Turmas</a></li>
+			<li><a style="cursor: pointer;" (click)="navBarRedirect('kids')">Crianças</a></li>
+		</ul>
+	</div>
+
+	<div class="right-items">
+		<div class="profile-container" (click)="navBarRedirect('profile')">
+			<p class="mobile-item" id="nameProfile"></p>
+			<img class="profile-icon icon" src="../../../assets/register/User/Icon.svg">
+		</div>
+		<img class="exit-icon icon" (click)="logout()" src="../../../assets/register/User/Group.svg">
+	</div>
+</div>
+
+<div id="sidebar" class="sidebar" *ngIf="showSideBar">
+	<div class="sidebar-item desktop-item" [class.selected]="selectedOption === 'class'"
+		(click)="navBarRedirect('personal-material')">
+		<img src="../../../assets/navbar/profile-class-nav.svg">
+	</div>
+
+
+	<div class="sidebar-item mobile-item" [class.selected]="selectedOption === 'home'" (click)="navBarRedirect('home')">
+		<div class="sidebar-item">
+			<img src="../../../assets/navbar/home-sidebar.svg">
+		</div>
+		<div class="sidebar-item text">
+			Início
+		</div>
+	</div>
+
+	<div class="sidebar-item mobile-item" [class.selected]="selectedOption === 'kids'" (click)="navBarRedirect('kids')">
+		<div class="sidebar-item">
+			<img src="../../../assets/navbar/kids-sidebar.svg">
+		</div>
+		<div class="sidebar-item text">
+			Crianças
+		</div>
+	</div>
+	<div class="sidebar-item mobile-item" [class.selected]="selectedOption === 'classes'"
+		(click)="navBarRedirect('classes')">
+		<div class="sidebar-item">
+			<img src="../../../assets/navbar/classes-sidebar.svg">
+		</div>
+		<div class="sidebar-item text">
+			Turmas
+		</div>
+	</div>
+</div>

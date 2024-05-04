@@ -1,0 +1,205 @@
+<div class="container">
+    <div class="left-container">
+        <div class="form-container" *ngIf="showFormulary">
+            <form [formGroup]="formulary">
+                <div class="logo-container">
+                    <a routerLink="/home">
+                        <img class="img-logo" src="../../../assets/images/logo edf.svg" alt="">
+                    </a>
+                </div>
+                <h1 class="formulary title">Insira seus dados para realizar o cadastro.</h1>
+                <div class="input-group">
+                    <div class="input-wrapper"
+                        [ngClass]="{ 'error-field': formulary.get('nomeCompleto')?.hasError('emptyRequiredField') }">
+                        <div class="input-with-icon">
+                            <div class="input-icon">
+                                <img src="../../../assets/register/Frame 170.svg" alt="">
+                            </div>
+                            <div class="input-label">
+                                <label for="nomeCompleto">Nome Completo</label>
+                                <input type="text" id="nomeCompleto" formControlName="nomeCompleto">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-wrapper"
+                        [ngClass]="{ 'error-field': formulary.get('apelido')?.hasError('emptyRequiredField') }">
+                        <div class="input-with-icon">
+                            <div class="input-icon">
+                                <img src="../../../assets/register/Frame 170.svg" alt="">
+                            </div>
+                            <div class="input-label">
+                                <label for="apelido">Apelido</label>
+                                <input type="text" id="apelido" formControlName="apelido">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-wrapper"
+                        [ngClass]="{ 'error-field': formulary.get('email')?.hasError('emptyRequiredField') }">
+                        <div class="input-with-icon">
+                            <div class="input-icon">
+                                <img src="../../../assets/register/email.svg" alt="">
+                            </div>
+                            <div class="input-label">
+                                <label for="email">E-mail</label>
+                                <input type="text" id="email" formControlName="email">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="error-message-container" *ngIf="formulary.hasError('email', 'email')">
+                    <div class="error-message-4">E-mail inválido</div>
+                </div>
+
+                <div class="error-message-container" *ngIf="emailCadastrado">
+                    <div class="error-message-4">E-mail Já Cadastrado</div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-wrapper"
+                        [ngClass]="{ 'error-field': formulary.get('senha')?.hasError('emptyRequiredField') }">
+                        <div class="input-with-icon">
+                            <div class="input-icon">
+                                <img src="../../../assets/register/password.svg" alt="">
+                            </div>
+                            <div class="input-label">
+                                <label for="senha">Senha</label>
+                                <input type="{{ showPassword ? 'text' : 'password' }}" id="senha"
+                                    formControlName="senha">
+
+                            </div>
+                            <div class="password-toggle" (click)="togglePasswordVisibility()">
+                                <i class="fas" [class.fa-eye]="!showPassword" [class.fa-eye-slash]="showPassword"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-wrapper"
+                        [ngClass]="{ 'error-field': formulary.get('confirmarSenha')?.hasError('emptyRequiredField') }">
+                        <div class="input-with-icon">
+                            <div class="input-icon">
+                                <img src="../../../assets/register/password.svg" alt="">
+                            </div>
+                            <div class="input-label">
+                                <label for="confirmarSenha">Confirmar Senha</label>
+                                <input type="{{ showConfirmPassword ? 'text' : 'password' }}" id="confirmarSenha"
+                                    formControlName="confirmarSenha">
+
+                            </div>
+                            <div class="password-toggle" (click)="toggleConfirmPasswordVisibility()">
+                                <i class="fas" [class.fa-eye]="!showConfirmPassword"
+                                    [class.fa-eye-slash]="showConfirmPassword"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="div-error-message">
+                    <div class="error-message-container">
+                        <div class="error-message-2" *ngIf="formulary.get('senha')?.hasError('minlength')"> A senha
+                            deve ter pelo menos 6 caracteres</div>
+                    </div>
+                    <div class="error-message-container">
+                        <div class="error-message-3  d2"
+                            *ngIf="formulary.get('confirmarSenha')?.hasError('senhasDiferentes')">
+                            As senhas não coincidem</div>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-wrapper"
+                        [ngClass]="{ 'error-field': formulary.get('cpf')?.hasError('emptyRequiredField') }">
+                        <div class="input-with-icon">
+                            <div class="input-icon">
+                                <img src="../../../assets/register/CPF.svg" alt="">
+                            </div>
+                            <div class="input-label">
+                                <label for="cpf">CPF</label>
+                                <input type="number" id="cpf" formControlName="cpf">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-wrapper"
+                        [ngClass]="{ 'error-field': formulary.get('telefone')?.hasError('emptyRequiredField') }">
+                        <div class="input-with-icon">
+                            <div class="input-icon">
+                                <img src="../../../assets/register/Group 153.svg" alt="">
+                            </div>
+                            <div class="input-label">
+                                <label for="telefone">Telefone</label>
+                                <input type="number" id="telefone" formControlName="telefone">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="error-message-container" *ngIf="cpfCadastrado">
+                    <div class="error-message-4">CPF Já Cadastrado</div>
+                </div>
+                <div class="input-group">
+                    <div class="input-wrapper"
+                        [ngClass]="{ 'error-field': formulary.get('genero')?.hasError('emptyRequiredField') }">
+                        <div class="input-with-icon">
+                            <div class="input-icon">
+                                <img src="../../../assets/register/Group 143.svg" alt="">
+                            </div>
+                            <div class="input-label">
+                                <label for="genero">Gênero</label>
+                                <select id="genero" formControlName="genero">
+                                    <option value="m">Masculino</option>
+                                    <option value="f">Feminino</option>
+                                    <option value="o">Outro</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-wrapper"
+                        [ngClass]="{ 'error-field': formulary.get('estadoCivil')?.hasError('emptyRequiredField') }">
+                        <div class="input-with-icon">
+                            <div class="input-icon">
+                                <img src="../../../assets/register/Layer 2.svg" alt="">
+                            </div>
+                            <div class="input-label">
+                                <label for="estadoCivil">Estado Civil</label>
+                                <select id="estadoCivil" formControlName="estadoCivil">
+                                    <option value="Solteiro">Solteiro</option>
+                                    <option value="Casado">Casado</option>
+                                    <option value="Viuvo">Viúvo</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-wrapper"
+                        [ngClass]="{ 'error-field': formulary.get('dataNascimento')?.hasError('emptyRequiredField') }">
+                        <div class="input-with-icon">
+                            <div class="input-icon">
+                                <img src="../../../assets/register/username.svg" alt="">
+                            </div>
+                            <div class="input-label">
+                                <label for="dataNascimento">Data de Nascimento</label>
+                                <input type="date" id="dataNascimento" formControlName="dataNascimento">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="terms">
+                    <input type="checkbox" class="checkbox-div" id="termosUso" formControlName="termosUso">
+                    <label class="terms-use" for="termosUso">Li os Termos de uso e Privacidade de dados</label>
+                    <div class="error-message" *ngIf="!formulary.get('termosUso')?.value">
+                        Você deve aceitar os Termos de Uso e Privacidade de Dados.
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button class="next-button" (click)="register()">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="right-container">
+        <div class="right-container-bg">
+            <img src="../../../assets/register/register-logo.svg" />
+        </div>
+    </div>
+</div>

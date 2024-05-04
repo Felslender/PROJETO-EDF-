@@ -1,0 +1,226 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "API EDF+",
+      "description": "API com o objetivo de retornar respostas do banco para o usuário",
+      "termsOfService": "",
+      "contact": {
+        "email": "emailteste123@gmail.com"
+      },
+      "version": "1.0.0"
+    },
+    "paths": {
+      "/Login": {
+        "post": {
+          "summary": "Login",
+          "description": "Rota com o objetivo de realizar o login no site, utilizando Email e Senha. Em caso de sucesso, retorna um token para acesso a outras informações do usuário logado.",
+          "tags": ["Login"],
+          "parameters": [],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Login"
+                }
+              }
+            }
+          },
+          "responses": {
+            "401": {
+              "description": "Credenciais inválidas, status: 11"
+            },
+            "500": {
+              "description": "Problema interno de login, status: 8"
+            }
+          }
+        }
+      },
+      "/CadastrarAluno": {
+        "post": {
+          "summary": "Cadastro do aluno",
+          "description": "Rota com o objetivo de cadastrar o aluno no site. A conta criada já vem inserida com o cargo de aluno (ID_Cargo = 3) e ID auto increment. CPF e Email são UNIQUE, ou seja, são únicos para cada usuário.",
+          "tags": ["Aluno"],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Aluno"
+                }
+              }
+            }
+          },
+          "responses": {
+            "500": {
+              "description": "Erro ao se cadastrar, status: 4"
+            },
+            "422": {
+              "description": "As senhas não conferem"
+            },
+            "400": {
+              "description": "CPF já cadastrado, status 14"
+            },
+            "401": {
+              "description": "Email já cadastrado, status 13"
+            },
+            "201": {
+              "description": "Usuário cadastrado com sucesso!"
+            }
+          }
+        }
+      },
+      "/CadastrarCrianca": {
+        "post": {
+          "summary": "Cadastro da criança",
+          "description": "Rota com o objetivo de cadastrar a criança do responsável em seu perfil no site. A criança é cadastrada utilizando o ID do aluno logado, ID da escola cadastrada e da turma. A criança também possui informações do tipo UNIQUE que seria o CPF.",
+          "tags": ["Aluno"],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Crianca"
+                }
+              }
+            }
+          },
+          "security": [
+            {
+              "bearerAuth": []
+            }
+          ],
+          "responses": {
+            "500": {
+              "description": "Erro ao cadastrar uma criança, status: 3"
+            },
+            "401": {
+              "description": "CPF já cadastrado, status: 14"
+            }
+          }
+        }
+      },
+      "/SuasCriancas": {
+        "get": {
+          "description": "Mostra todas as crianças do aluno que fez login, utilizando o ID do aluno que realizou o login.",
+          "summary": "Rota GET com a função de mostrar as crianças do responsável.",
+          "tags": ["Aluno"],
+          "security": [
+            {
+              "bearerAuth": []
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Sucesso"
+            },
+            "500": {
+              "description": "Erro ao buscar por suas crianças cadastradas, status 5"
+            }
+          }
+        }
+      },
+      "/InfoAluno": {
+        "get": {
+          "description": "Na tela do usuário, realiza um GET em que busca e mostra para o usuário suas informações de usuário.",
+          "summary": "Rota GET com a função de mostrar as informações do aluno.",
+          "tags": ["Aluno"],
+          "security": [
+            {
+              "bearerAuth": []
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Sucesso"
+            },
+            "500": {
+              "description": "Erro ao buscar por suas informações"
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "Aluno": {
+          "type": "object",
+          "properties": {
+            "nome": {
+              "type": "string"
+            },
+            "nomePreferencia": {
+              "type": "string"
+            },
+            "cpf": {
+              "type": "number"
+            },
+            "celWhatsapp": {
+              "type": "number"
+            },
+            "email": {
+              "type": "string"
+            },
+            "senha": {
+              "type": "string"
+            },
+            "confirmarSenha": {
+              "type": "string"
+            },
+            "sexo": {
+              "type": "string"
+            },
+            "estadoCivil": {
+              "type": "string"
+            },
+            "modalidade": {
+              "type": "string"
+            }
+          }
+        },
+        "Crianca": {
+          "type": "object",
+          "properties": {
+            
+            "idEscola": {
+              "type": "number"
+            },
+            "idTurma": {
+              "type": "number"
+            },
+            "nome": {
+              "type": "string"
+            },
+            "cpf": {
+              "type": "number"
+            },
+            "dataNascimento": {
+              "type": "string"
+            },
+            "sexo": {
+              "type": "string"
+            },
+            "grauParentesco": {
+              "type": "string"
+            }
+          }
+        },
+        "Login": {
+          "type": "object",
+          "properties": {
+            "email": {
+              "type": "string"
+            },
+            "senha": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "securitySchemes": {
+        "bearerAuth": {
+          "type": "http",
+          "scheme": "bearer",
+          "bearerFormat": "JWT"
+        }
+      }
+    }
+  }
+  

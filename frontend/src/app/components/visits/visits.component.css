@@ -1,0 +1,47 @@
+.container {
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sub-container {
+    gap: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    width: 100%;
+    max-width: 1920px;
+    height: 100%;
+}
+
+.card {
+    width: 90%;
+    padding: 40px;
+    transition: transform 0.3s background-color 0.3s;
+}
+
+.card:hover,
+.card:active {
+    transform: scale(1.05);
+    background-color: white;
+}
+.tipo {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.status span {
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-size: 14px;
+    background-color: #F2FF5E;
+    color: #8C9800;
+}
+
+.mat-mdc-card-actions,
+.mat-mdc-card-content {
+    margin-top: 6px;
+}

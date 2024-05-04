@@ -1,0 +1,283 @@
+<div class="menubar">
+  <div class="left-items">
+    <img #menuIcon (click)="toggleSidebar()" class="ham-icon icon" src="../../../assets/register/User/menu-lateral.svg">
+    <img (click)="navBarRedirect('home')" class="logo-icon icon" src="../../../assets/navbar/logo.svg">
+  </div>
+
+  <div class="center-items">
+    <ul>
+      <li><a style="cursor: pointer;" (click)="navBarRedirect('about')">Quem Somos</a></li>
+      <li><a style="cursor: pointer;" (click)="navBarRedirect('us')">Nosso Programa</a></li>
+      <li><a style="cursor: pointer;" (click)="navBarRedirect('working')">Funcionamento</a></li>
+      <li><a style="cursor: pointer;" (click)="navBarRedirect('material')">Material</a></li>
+
+    </ul>
+  </div>
+
+  <div class="right-items">
+    <div class="portal-container" (click)="navBarRedirect('profile')">
+      <p>Portal</p>
+    </div>
+  </div>
+</div>
+
+
+<div id="sidebar" class="sidebar" *ngIf="showSideBar">
+  <div class="sidebar-item desktop-item" [class.selected]="selectedOption === 'class'"
+    (click)="navBarRedirect('personal-material')">
+    <img src="../../../assets/navbar/profile-class-nav.svg">
+  </div>
+
+
+  <div class="sidebar-item mobile-item" [class.selected]="selectedOption === 'home'" (click)="navBarRedirect('home')">
+    <div class="sidebar-item">
+      <img src="../../../assets/navbar/home-sidebar.svg">
+    </div>
+    <div class="sidebar-item text">
+      Início
+    </div>
+  </div>
+  <div class="sidebar-item mobile-item" [class.selected]="selectedOption === 'about'" (click)="navBarRedirect('about')">
+    <div class="sidebar-item">
+      <img src="../../../assets/navbar/aboutus-sidebar.svg">
+    </div>
+    <div class="sidebar-item text">
+      Quem Somos
+    </div>
+  </div>
+  <div class="sidebar-item mobile-item" [class.selected]="selectedOption === 'us'" (click)="navBarRedirect('us')">
+    <div class="sidebar-item">
+      <img src="../../../assets/navbar/aboutus-sidebar.svg">
+    </div>
+    <div class="sidebar-item text">
+      Nosso Programa
+    </div>
+  </div>
+
+  <div class="sidebar-item mobile-item" [class.selected]="selectedOption === 'working'"
+    (click)="navBarRedirect('working')">
+    <div class="sidebar-item">
+      <img src="../../../assets/home/operation-nav.svg" style="width: 32px;">
+
+    </div>
+    <div class="sidebar-item text">
+      Funcionamento
+    </div>
+  </div>
+
+  <div class="sidebar-item mobile-item" [class.selected]="selectedOption === 'material'"
+    (click)="navBarRedirect('material')">
+    <div class="sidebar-item">
+      <img src="../../../assets/navbar/profile-class-nav.svg">
+    </div>
+    <div class="sidebar-item text">
+      Material
+    </div>
+  </div>
+</div>
+
+<div class="main-container">
+  <div class="container">
+    <div class="panel-1 panel" id="panel-1">
+      <div class="bg-color">
+          <div class="bottom-shadow">
+          <div class="bg-img">
+            <div class="text-container">
+              <div class="mini-container">
+                <div class="big-text">
+                  <p>Virtude é a <br> disposição da <br> pessoa de <br> praticar o bem</p>
+                </div>
+                <div class="medium-text">
+                  <p>Programa de desenvolvimento</p>
+                </div>
+                <div class="button-container">
+                  <button (click)="more()">Saiba Mais <img src="../../../assets/home/home-button-more.svg"
+                      alt=""></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel-2 panel" id="panel-2">
+      <div class="left">
+        <img src="../../../assets/home/home-kids-img.png" alt="">
+      </div>
+      <div class="right">
+        <div class="text-container">
+          <div class="big-text">
+            <p>Quem Somos</p>
+          </div>
+          <div class="medium-text">
+            <p>A Escola da Família é uma organização sem fins lucrativos que contribui com os pais e responsáveis de
+              alunos do Ensino Infantil até o Ensino Médio nas questões que envolvem educação de filhos por meio do
+              Programa Desenvolvendo Crianças Virtuosas. Virtude é a disposição da pessoa de praticar o bem.</p>
+          </div>
+          <div class="footer">
+            <div class="email"><img src="../../../assets/home/home-contact-email.svg">
+              <p>contato&#64;.org.br</p>
+            </div>
+            <div class="whatsapp"><img src="../../../assets/home/home-contact-whatsapp.svg">
+              <p>(14) 99602-6431</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="panel-3 panel" id="panel-3">
+      <div class="text-container">
+        <div class="big-text">
+          <p>Conheça mais sobre <a href="/home">nosso
+              programa</a><br>
+            de educação baseada em valores</p>
+        </div>
+        <div class="medium-text">
+          <p>Nosso objetivo é apoiar os pais e responsáveis nas escolas em parceria com o governo das cidades para
+            contribuir no desenvolvimento das novas gerações. Entendemos que por meio dos pais podemos investir juntos
+            no
+            futuro das crianças e adolescentes e aumentar a longo prazo o número de cidadãos familiarmente responsáveis.
+          </p>
+        </div>
+
+
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="big-text">
+            <p>Educação Baseada em Valores</p>
+          </div>
+          <div class="small-text">
+            <p>Um programa que utiliza princípios e valores como base para uma educação eficaz e significativa dos
+              filhos.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="big-text">
+            <p>Relações Saudáveis e Harmoniosas</p>
+          </div>
+          <div class="small-text">
+            <p>Estabelece um caminho para fortalecer os laços familiares, promovendo relacionamentos saudáveis.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="big-text">
+            <p>Emoções Saudáveis, Estudos Bem-Sucedido</p>
+          </div>
+          <div class="small-text">
+            <p>Um programa que busca desenvolver a saúde emocional das crianças, refletindo em um melhor desempenho
+              acadêmico.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="big-text">
+            <p>Prático e Realista</p>
+          </div>
+          <div class="small-text">
+            <p>Um programa que oferece conteúdo adequado à realidade cotidiana das famílias brasileiras, com dicas e
+              abordagens práticas.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="panel-4 panel" id="panel-4">
+      <div class="left">
+        <div class="text-container">
+          <div class="big-text">
+            <p>Como Funciona</p>
+          </div>
+          <div class="medium-text">
+            <p>Para pais e responsáveis, atendemos crianças virtuosas no programa de desenvolvimento até os 14 anos.</p>
+          </div>
+          <div class="cards">
+            <div class="card card-1">
+              <div class="title">4 a 5 anos</div>
+              <div class="text">Educação Infantil – PRÉ I E PRÉ II</div>
+            </div>
+            <div class="card card-2">
+              <div class="title">6 a 10 anos</div>
+              <div class="text">Educação Fundamental I – 1º ao 5º ano</div>
+            </div>
+            <div class="card card-3">
+              <div class="title">11 a 14 anos</div>
+              <div class="text">Educação Fundamental II – 6º ao 9º ano</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="text-container">
+          <div class="cards">
+            <div class="card">
+              <div class="icon"><img src="../../../assets/home/home-calendar.svg"></div>
+              <div class="text">2 encontros por mês</div>
+            </div>
+            <div class="card">
+              <div class="icon"><img src="../../../assets/home/home-clock.svg"></div>
+              <div class="text"><span class="bold">1º encontro</span> de 1 hora e 30 minutos</div>
+            </div>
+            <div class="card">
+              <div class="icon"><img src="../../../assets/home/home-clock.svg"></div>
+              <div class="text"><span class="bold">2º encontro</span> após 15 dias de 01 hora.</div>
+            </div>
+            <div class="card">
+              <div class="icon"><img src="../../../assets/home/home-person.svg"></div>
+              <div class="text"><span class="bold">Turmas</span> Presenciais ou Remotas</div>
+            </div>
+            <div class="footer">
+              <div class="icon"><img src="../../../assets/home/home-info.svg" alt=""></div>
+              <div class="text">Não há reposição de aulas</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel-5 panel" id="panel-5">
+      <div class="left">
+        <p>Disponibilizamos de apostilas com ensinos e dicas aplicáveis a idade das crianças para desenvolver uma
+          virtude
+          por mês na vida dos pais e seus filhos. Durante todo o programa trabalhamos também a virtude da constância e a
+          ressignificação com os participantes.</p>
+      </div>
+      <div class="center">
+        <div class="title">Material Didático</div>
+        <div class="cards">
+          <div class="big-text">Caracteristica do Conteúdo</div>
+          <div class="card">
+            <div class="icon"><img src="../../../assets/home/home-person2.svg" alt=""></div>
+            <div class="text">Uma linguagem de fácil entendimento</div>
+          </div>
+          <div class="card">
+            <div class="icon"><img src="../../../assets/home/home-book.svg" alt=""></div>
+            <div class="text">Abordagens e conceitos teóricos simples</div>
+          </div>
+          <div class="card">
+            <div class="icon"><img src="../../../assets/home/home-light.svg" alt=""></div>
+            <div class="text">Aprofundamento dos temas com dicas práticas</div>
+          </div>
+          <div class="card">
+            <div class="icon"><img src="../../../assets/home/home-paper.svg" alt=""></div>
+            <div class="text">Testes para reflexões</div>
+          </div>
+          <div class="card">
+            <div class="icon"><img src="../../../assets/home/home-family.svg" alt=""></div>
+            <div class="text">Dinâmicas para toda a família</div>
+          </div>
+          <div class="card">
+            <div class="icon"><img src="../../../assets/home/home-paper2.svg" alt=""></div>
+            <div class="text">Histórias e fábulas para extrair ensinos de personagens.</div>
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="https://api.whatsapp.com/send?phone=5514996026431&text=Ola,%20gostaria%20de%20mais%20informações%20sobre%20o%20programa!" target="_blank">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  </a>
+</div>
+

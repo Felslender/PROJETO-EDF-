@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+.error-field {
+  border: 2px solid red !important;
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-direction: column;
+  width: 90%;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #0092D3;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 3px;
+  border-radius: 8px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.input-with-icon label {
+  margin-bottom: 5px;
+  line-height: 120%;
+  color: rgba(0, 0, 0, .5);
+  font-size: 10px;
+  font-family: 'Inter', sans-serif;
+  margin-left: 9px;
+}
+
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-group {
+  padding: 6px;
+  border-radius: 5px;
+  display: flex;
+  gap: 21px;
+  height: 52px;
+  max-width: 500px;
+}
+
+.input-with-icon select {
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 600;
+  height: 24px;
+  font-size: 14px;
+}
+
+.input-with-icon select:focus {
+  outline: none;
+}
+
+.input-with-icon select.error-field {
+  border: 2px solid red;
+}
+
+.input-with-icon select option {
+  background: white;
+  color: black;
+}
+
+.input-with-icon input {
+  margin-top: 5px;
+  width: 95%;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 600;
+  height: 28px;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.input-with-icon input:focus {
+  outline: none;
+}
+
+.input-with-icon input.error-field {
+  border: 2px solid red;
+}
+
+.input-wrapper input {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 0;
+  height: 24px;
+}
+
+.input-icon {
+  float: left;
+  position: relative;
+}
+
+.formulary.title {
+  text-align: center;
+  color: #0092D3;
+  font-size: 24px;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 6px;
+  margin-top: 12px;
+}
+
+.next-button {
+  background-color: #0092D3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 20px;
+  width: 188px;
+}
+
+.next-button:hover {
+  background-color: #0078A9;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.left-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.right-container {
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(206deg, #0095D9 0%, #A6CE38 50.62%, #FFCA0A 99.17%);
+  display: flex;
+  align-items: center;
+}
+
+.right-container-bg {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 149, 217, 0.60);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-container img {
+  width: 100%;
+  max-width: 500px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+  .right-container {
+    display: none;
+  }
+
+  .input-group {
+    display: inline;
+    padding: 0;
+  }
+
+  .input-wrapper {
+    margin-bottom: 10px;
+  }
+
+  .button-container {
+    display: flex;
+    width: 100%;
+    margin-left: 45px;
+  }
+
+  .next-button {
+    margin-bottom: 5px;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .left-container {
+    width: 100%;
+    justify-content: start;
+  }
+  
+  .container {
+    margin-top: 30px;
+  }
+
+}
+
+.input-label {
+  width: 100%;
+}
+input[type="date"]::-webkit-inner-spin-button,
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+
+.error-message-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+}
+
+.error-message-4 {
+  color: red;
+  font-size: 14px;
+  position: relative;
+}

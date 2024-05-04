@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="sub-container">
+        <mat-card *ngFor="let modulo of modulos" class="card">
+            <mat-card-header>
+                <mat-card-title (click)="toVisit(modulo.idTurma)"
+                                class="module-name">{{ modulo.nomeModulo }}</mat-card-title>
+                <mat-card-subtitle>{{ modulo.nomeEscola }}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-actions>
+                <img (click)="toggleInfo(modulo.idTurma)" src="../../../assets/classes/info.svg" alt=""
+                     class="info-button">
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
+
+<div (click)="this.showInfo = !this.showInfo;" class="info-container" *ngIf="showInfo">
+    <div class="info">
+        <div class="info-header">
+            <span>Desenvolvendo Crianças Virtuosas I</span>
+        </div>
+        <div class="info-facilitator" *ngFor="let facilitator of facilitators">
+            <div class="img-profile"><img src="../../../assets/classes/profile.svg" alt=""></div>
+            <div class="text">
+                <div class="name">
+                    <span>{{ facilitator?.nomeFacilitador }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="time">
+            <div class="clock"><img src="../../../assets/classes/clock.svg" alt=""></div>
+            <span>1 hora</span>
+        </div>
+        <div class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga officia aut expedita
+            doloremque, cumque reiciendis facere enim, cum natus architecto dicta totam quasi delectus necessitatibus.
+            Architecto asperiores molestiae totam repellat! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Consequatur ducimus nesciunt, recusandae explicabo voluptatibus repellendus veritatis distinctio facilis
+            corporis aliquid nemo, excepturi sunt. Repellendus fugit eaque provident libero laudantium officia. Lorem,
+            ipsum dolor sit amet consectetur adipisicing elit. Hic, voluptatibus atque velit quo exercitationem neque
+            ipsam ipsum ullam dignissimos non. Ad dolorum hic delectus labore! Consequatur exercitationem molestiae
+            dicta ipsam.
+        </div>
+    </div>
+</div>

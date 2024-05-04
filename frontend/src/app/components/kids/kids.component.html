@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="kids-container">
+    <div class="kids-container-bg">
+
+      <div class="right-container-header">
+        <h2>Crianças</h2>
+      </div>
+      <div class="right-container-info">
+        <div class="kid-container" *ngFor="let name of names; let i = index" [attr.id]="'kid-' + i">
+          <h3>{{ name }}</h3>
+        </div>
+      </div>
+      <button class="add-button" (click)="newKidPage()">Adicionar Criança</button>
+    </div>
+
+  </div>
+</div>

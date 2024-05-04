@@ -1,0 +1,138 @@
+
+<div class="container">
+  <div class="left-container">
+    <div class="form-container">
+      <form [formGroup]="kidsForms" class="kids-forms">
+        <div class="logo">
+          <img src="../../../assets/images/logo edf.svg" alt="">
+
+        </div>
+        <h1 class="formulary title">Insira os dados da criança.</h1>
+        <div class="input-group">
+          <div class="input-wrapper"
+            [ngClass]="{ 'error-field': kidsForms.get('nomeCompleto')?.hasError('emptyRequiredField') }">
+            <div class="input-with-icon">
+              <div class="input-icon">
+                <img src="../../../assets/register/Frame 170.svg" alt="">
+              </div>
+              <div class="input-label">
+                <label for="nomeCompleto">Nome Completo</label>
+                <input type="text" id="nomeCompleto" formControlName="nomeCompleto">
+              </div>
+            </div>
+          </div>
+          <div class="input-wrapper"
+            [ngClass]="{ 'error-field': kidsForms.get('cpf')?.hasError('emptyRequiredField') }">
+            <div class="input-with-icon">
+              <div class="input-icon">
+                <img src="../../../assets/register/CPF.svg" alt="">
+              </div>
+              <div class="input-label">
+                <label for="cpf">CPF</label>
+                <input type="number" id="cpf" formControlName="cpf">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="error-message-container">
+          <div class="error-message-4" *ngIf="cpfCadastrado">CPF Já Cadastrado</div>
+      </div>
+        <div class="input-group">
+          <div class="input-wrapper"
+            [ngClass]="{ 'error-field': kidsForms.get('grauPar')?.hasError('emptyRequiredField') }">
+            <div class="input-with-icon">
+              <div class="input-icon">
+                <img src="../../../assets/register/Frame 171.svg" alt="">
+              </div>
+              <div class="input-label">
+                <label for="grauPar">Grau de Parentesco</label>
+                <input type="text" id="grauPar" formControlName="grauPar">
+              </div>
+            </div>
+          </div>
+          <div class="input-wrapper"
+            [ngClass]="{ 'error-field': kidsForms.get('dataNascimento')?.hasError('emptyRequiredField') }">
+            <div class="input-with-icon">
+              <div class="input-icon">
+                <img src="../../../assets/register/username.svg" alt="">
+              </div>
+              <div class="input-label">
+                <label for="dataNascimento">Data de Nascimento</label>
+                <input type="date" id="dataNascimento" formControlName="dataNascimento">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="input-group">
+          <div class="input-wrapper"
+            [ngClass]="{ 'error-field': kidsForms.get('genero')?.hasError('emptyRequiredField') }">
+            <div class="input-with-icon">
+              <div class="input-icon">
+                <img src="../../../assets/register/Group 143.svg" alt="">
+              </div>
+              <div class="input-label">
+                <label for="genero">Gênero</label>
+                <select id="genero" formControlName="genero">
+                  <option value="m">Masculino</option>
+                  <option value="f">Feminino</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="input-wrapper"
+            [ngClass]="{ 'error-field': kidsForms.get('turma')?.hasError('emptyRequiredField') }">
+            <div class="input-with-icon">
+              <div class="input-icon">
+                <img src="../../../assets/register/Frame 168.svg" alt="">
+              </div>
+              <div class="input-label">
+                <label for="turma">Turma</label>
+                <select id="turma" formControlName="turma">
+                  <option value="1">Maternal</option>
+                  <option value="2">Pré 1</option>
+                  <option value="3">Pré 2</option>
+                  <option value="4">Ano 1</option>
+                  <option value="5">Ano 2</option>
+                  <option value="6">Ano 3</option>
+                  <option value="7">Ano 4</option>
+                  <option value="8">Ano 5</option>
+                  <option value="9">Ano 6</option>
+                  <option value="10">Ano 7</option>
+                  <option value="11">Ano 8</option>
+                  <option value="12">Ano 9</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="input-group">
+          <div class="input-wrapper"
+            [ngClass]="{ 'error-field': kidsForms.get('escola')?.hasError('emptyRequiredField') }">
+            <div class="input-with-icon">
+              <div class="input-icon">
+                <img src="../../../assets/register/Frame 169.svg" alt="">
+              </div>
+              <div class="input-label">
+                <label for="escola">Escola</label>
+                <select id="escola" formControlName="escola">
+                  <option value="1">Escola Teste</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="button-container">
+        <button class="next-button" (click)="cancelNewKid()" style="background-color: red; margin-top: 12px;">Cancelar</button>
+        <button class="next-button" (click)="saveChildData()" style="margin-top: 12px;">Concluir</button>
+
+      </div>
+    </div>
+
+  </div>
+  <div class="right-container">
+    <div class="right-container-bg">
+      <img src="../../../assets/new-kids/kids-logo.svg" />
+    </div>
+  </div>
+</div>
