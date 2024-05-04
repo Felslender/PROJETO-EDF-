@@ -1,3 +1,5 @@
+
+-- exemplo de nome database
 CREATE DATABASE EDF;
 
 use EDF;
@@ -32,7 +34,7 @@ FOREIGN KEY (idCargo) REFERENCES Cargos(idCargos)
 
 -- inserir exemplo de aluno
 INSERT INTO Alunos(idCargo, nome, nomePreferencia, cpf, celWhatsapp, email, senha, sexo, estadoCivil, modalidade)
-VALUES(3, 'Felipe Cavalcante', 'Felipe', '42828831255', 1499551234, 'felipemainyasuo@gmail.com', "senhalegal", 'M', 'solteiro', 'online');
+VALUES(3, 'Felipe Cavalcante', 'Felipe', '42828831255', 1499551234, 'emailteste@gmail.com', "senhalegal", 'M', 'solteiro', 'online');
 
 -- area escola
 CREATE TABLE Escola(
@@ -51,7 +53,7 @@ telefone BIGINT
 -- inserir exemplo de escola
 
 INSERT INTO Escola(nomeEscola, diretor, endereço, numero, bairroDistrito, cidade, uf, cep, telefone)
-VALUES('EE Escola muito bacana', 'Luis Felipe Santos', 'Rua Hilario da Silva', 1128, 'Santos jurados', 'Pompeia', 'SP', 12345678, 149912345678);
+VALUES('exemplo escola', 'Luis Felipe Santos', 'Rua exemplo', 1128, 'Santos jurados', 'Pompeia', 'SP', 12345678, 149912345678);
 
 -- area modulos
 CREATE TABLE Modulos(
@@ -146,7 +148,7 @@ INSERT INTO Facilitador(idCargo ,nome, nomePreferencia, dataNascimento,
 estadoCivil, cpf, celWhatsapp, cep, endereço, numero, 
 email, emailEdf, ocupacao, uf, cidade, nomesFilhos, idadeFilhos)
 VALUES(2 ,'Marcos Cvalcante', 'Paula', '1995-01-07', 'casada', 25737818834, 14991461215, 17123345
-, 'rua dias', 1234, 'marcoscavalcante123@gmail.com', 'marcos.cavalcanteEDF@edf.com', 'facilitador', 'SP', 'Pompeia', 'Felipe Cavalcante', 12);
+, 'rua dias', 1234, 'marcoscavalcante123@gmail.com', 'marcos.cavalcanteEDF@edf.com', 'facilitador', 'SP', 'Pompeia', 'exemplo filho', 12);
 
 
 -- area admin
